@@ -16,6 +16,7 @@ CREATE TABLE POST (postID INTEGER NOT NULL AUTO_INCREMENT, -- every post gets a 
               pContent VARCHAR (1000) NOT NULL, -- every post can be at most 1000 characters long
               useful INTEGER DEFAULT 0, -- counts the number of useful votes post has
               reported INTEGER DEFAULT 0, -- counts the number of times post was reported
+              timeCreated CURRENT_TIMESTAMP, -- every post is tagged with the time it was created
               PRIMARY KEY(postID), -- unique identifier for a post its id
               FOREIGN KEY (pUsername) REFERENCES USER (username)
               );
@@ -27,6 +28,7 @@ CREATE TABLE COMMENT (commentID INTEGER NOT NULL AUTO_INCREMENT, -- every commen
               cContent VARCHAR (1000) NOT NULL, -- every comment can be at most 1000 characters long
               useful INTEGER DEFAULT 0, -- counts the number of useful votes post has
               reported INTEGER DEFAULT 0, -- counts the number of times post was reported
+              timeCreated CURRENT_TIMESTAMP, -- every post is tagged with the time it was created
               PRIMARY KEY(commentID), -- unique identifier for a comment its id
               FOREIGN KEY (cUsername) REFERENCES USER (username),
               FOREIGN KEY (cPostID) REFERENCES POST (postID),
