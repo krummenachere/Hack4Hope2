@@ -7,6 +7,7 @@ public class User
 	private String fname; 
 	private String lname; 
 	private String password; 
+	private String email;
 	private int dob; 
 	private boolean type; 
 	private boolean admin; 
@@ -19,7 +20,7 @@ public class User
 	
 	//More Constructor Cases could be added in the future
 	
-	public User(String inusername,String infname, String inlname, String inpassword,  int indob, boolean intype, boolean inadmin)
+	public User(String inemail, String inusername,String infname, String inlname, String inpassword,  int indob, boolean intype, boolean inadmin)
 	{
 		
 		
@@ -30,11 +31,16 @@ public class User
 		dob = indob; 
 		type = intype; 
 		admin = inadmin;
+		email = inemail; 
 		
 	}
 	//Getter and Setter Methods
 	public void setuser(String inuser) {
 		username = inuser; 
+	}
+	public void setemail(String inemail) {
+		email = inemail; 
+		
 	}
 	public void setfname(String infname) {
 		fname = infname; 
@@ -73,8 +79,9 @@ public class User
 	public boolean getadmin() {
 		return admin; 
 	}
-	
-	
+	public String getemail() {
+		return email; 
+	}
 	
 	
 	
